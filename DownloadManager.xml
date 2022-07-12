@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
     <version>4.0.0.0</version>
-    <url>https://github.com/Soniczac7/Download-Manager/releases/download/3.0.0/DownloadManager.zip</url>
+    <url>https://raw.githubusercontent.com/Soniczac7/app-update/main/DownloadManager.zip</url>
     <mandatory>true</mandatory>
 </item>
