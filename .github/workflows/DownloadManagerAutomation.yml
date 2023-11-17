@@ -1,0 +1,23 @@
+name: Update version number
+
+on:
+  repository_dispatch:
+    types: [release]
+
+jobs:
+  update-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Modify version number in xml file
+        uses: Mudlet/xmlstarlet-action@master
+        id: xml_replace
+        with:
+          args: ed -L --update "/DownloadManager/version" -v "${{ github.event.client_payload.version }}" "DownloadManager.xml"
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: Soniczac7
+          author_email: soniczac7@gmail.com
+          message: "Update Download Manager version number to ${{ github.event.client_payload.version }}"
